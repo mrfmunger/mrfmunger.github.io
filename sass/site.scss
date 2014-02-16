@@ -1,0 +1,110 @@
+@import url(http://fonts.googleapis.com/css?family=Oswald:400,300,700);
+@import url(http://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic);
+@import "mixins.scss";
+
+$dark-blue: #31353D;
+$teal: #009393;
+$cream: #FFFCF5;
+$light-gray: #D9D7D5;
+$red: #FF3800;
+
+$primary-font: 'Oswald', sans-serif;
+$secondary-font: 'Droid Serif', Helvetica, sans-serif;
+
+body {
+    font-family: $secondary-font;
+    background: $cream;
+    margin: 0;
+    
+    h1 {
+        font-family: $primary-font;
+        color: $dark-blue;
+    }
+
+    h2, h3 {
+    	font-family: $primary-font;
+    	color: $light-gray;
+    	margin-bottom: -15px;
+    }
+
+    .hero {
+    	font-family: $primary-font;
+    	clear: both;
+
+    	.name {
+    		font-size: 70px;
+    		color: $dark-blue;
+    		float: right;
+    		margin: 0 20px 0 0;
+    		clear: both;
+    	}
+
+    	.title {
+    		font-size: 34px;
+    		float: right;
+    		color: $teal;
+    		margin: -20px 20px 0 0;
+    		clear: both;
+    	}
+
+    	.handle {
+    		@extend .title;
+    		color: $light-gray;
+    		margin-top: -10px;
+    	}
+    }
+
+    .section {
+    	width: 100%;
+    	padding: 0 20px;
+
+    	.date {
+    		color: $light-gray;
+    		padding-left: 5px;
+    	}
+    }
+
+    .red-shape {
+    	position: relative;
+		overflow: hidden;
+    }
+
+    .red-shape::before {
+    	content: "";
+		position: absolute;
+		width: 750px;
+		height: 300px;
+		top: -200px;
+		left: -75px;
+		z-index: -1;
+		background: $red;
+		-webkit-transform: rotate(-15deg);
+		-moz-transform: rotate(-15deg);
+		-ms-transform: rotate(-15deg);
+		-o-transform: rotate(-15deg);
+		transform: rotate(-15deg);
+    }
+
+}
+
+a {
+	color: $light-gray;
+	text-decoration: none;
+}
+
+a:hover {
+	color: $red;
+	@include transition(color, 0.5s, linear);
+}
+
+.uppercase {
+	text-transform: uppercase;
+}
+
+.lowercase {
+	text-transform: lowercase;
+}
+
+.clearfix {
+	clear: both;
+}
